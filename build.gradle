@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'io.github.isharipov'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets.main.java.srcDirs = ['build/generated-sources','src/main/java']
+
+dependencies {
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'org.jooq:jooq:3.14.15'
+    implementation 'org.jooq:jooq-meta:3.14.15'
+    implementation 'org.jooq:jooq-codegen:3.14.15'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
